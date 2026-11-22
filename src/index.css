@@ -1,0 +1,261 @@
+:root {
+  --bg: #f4f7f6;
+  --card: #ffffff;
+  --ink: #14221f;
+  --muted: #5b6b66;
+  --line: #dce7e3;
+  --accent: #0f766e;
+  --accent-soft: #d9f2ee;
+}
+
+html[data-bs-theme="dark"] {
+  --bg: #0f1715;
+  --card: #17211e;
+  --ink: #eef6f3;
+  --muted: #9fb0aa;
+  --line: #2a3a35;
+  --accent: #2dd4bf;
+  --accent-soft: #16332e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Outfit, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.app-navbar {
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--accent) !important;
+}
+
+.nav-link.active {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+.theme-toggle {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.page-section,
+.hero {
+  padding: 48px 0 72px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.stats-row strong {
+  display: block;
+  font-size: 1.3rem;
+}
+
+.stats-row span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero-panel,
+.info-card,
+.filters,
+.empty-state,
+.destination-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.hero-panel,
+.info-card,
+.filters {
+  padding: 24px;
+}
+
+.destination-card {
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 118, 110, 0.12);
+}
+
+.card-img-wrap {
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, #cfe8e3, #eef6f3);
+  overflow: hidden;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fav-btn,
+.price-chip {
+  position: absolute;
+  top: 12px;
+  border: 0;
+}
+
+.fav-btn {
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: #64748b;
+}
+
+.fav-btn.active {
+  color: #e11d48;
+}
+
+.price-chip {
+  left: 12px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+}
+
+.star {
+  color: #d1d5db;
+}
+
+.star.filled {
+  color: #f59e0b;
+}
+
+.app-footer {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.details-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #cfe8e3, #eef6f3);
+  display: block;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.details-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.details-list span {
+  color: var(--muted);
+}
+
+.price-text {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.btn-success {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.modal-content {
+  background: var(--card);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.filters {
+  margin-bottom: 28px;
+}
+
+.filter-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.chip {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.details-breadcrumb {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.details-breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.details-breadcrumb span {
+  margin: 0 8px;
+}
